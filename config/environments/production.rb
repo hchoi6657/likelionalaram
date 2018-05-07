@@ -1,4 +1,15 @@
 Rails.application.configure do
+=begin  config.action_mailer.delivery_method = :smtp
+  # SMTP settings for gmail
+  config.action_mailer.smtp_settings = {
+    :address			  => :"smtp.gmail.com",
+	:port                 => 25,
+	:user_name            => ENV['dlehgo14@likelion.org'],
+	:password             => ENV['1967Sbsb'],
+	:authentication       => "plain",
+	:enable_starttls_auto => true
+	}	
+=end
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.

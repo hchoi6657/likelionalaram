@@ -16,15 +16,16 @@ logined_page = form.submit
 alist = logined_page.xpath('//ol[@class="list"]/li/a/div/h4//text()').map {|n| n}
 incomlist = logined_page.xpath('//ol[@class="list"]/li[@class="list__item incomplete"]').text
 
-$wholelist = ["강좌1", "강좌2"]
-puts "alist ----> "+alist.first
+$wholelist = alist
+
+
 def test22()
+  lecture_arr = []
   $wholelist.each {|x|
     if Test1.exists?(name: x.to_s)
       print x
       print "ya"
     else
-      lecture_arr = []
       post = Test1.new
       post.name = x
       post.save
