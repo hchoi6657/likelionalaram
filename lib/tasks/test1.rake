@@ -16,8 +16,8 @@ logined_page = form.submit
 alist = logined_page.xpath('//ol[@class="list"]/li/a/div/h4//text()').map {|n| n}
 incomlist = logined_page.xpath('//ol[@class="list"]/li[@class="list__item incomplete"]').text
 
-$wholelist = alist
-
+$wholelist = ["강좌1", "강좌2"]
+puts "alist ----> "+alist.first
 def test22()
   $wholelist.each {|x|
     if Test1.exists?(name: x.to_s)
