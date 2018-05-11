@@ -6,11 +6,25 @@ class PlzController < ApplicationController
    end
    
    def create
-	 @user = User.new
-	 @user.name = params[:name]
-	 @user.email = params[:email]
-	 @user.save
-	 redirect_to :root
+	 if params[:sign]=="true"
+		 @user = User.new
+		 @user.name = params[:name]
+		 @user.email = params[:email]
+		 @user.save
+		 redirect_to :root
+	 else
+		 @user = User.find_by(email: params[:email])
+		 if @user
+		   redirect_to "/plz/login/#{@user.email}"
+		 else
+		   redirect_to :root
+		 end
+	 end
+	 
+   end
+   
+   def login
+     @user = User.find_by(email: params[:email]+".com")
    end
    
 

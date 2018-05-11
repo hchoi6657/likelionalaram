@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   root "plz#index"
   
   post "plz/create" => "plz#create"
+  
+  get 'plz/login/:email' => "plz#login"
 end
