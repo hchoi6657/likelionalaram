@@ -16,8 +16,8 @@ logined_page = form.submit
 alist = logined_page.xpath('//ol[@class="list"]/li/a/div/h4//text()').map {|n| n}
 incomlist = logined_page.xpath('//ol[@class="list"]/li[@class="list__item incomplete"]').text
 
-# $wholelist = alist
-$wholelist = ["Test 강의"]
+$wholelist = alist
+
 
 def test22()
   lecture_arr = []
