@@ -46,9 +46,15 @@ end
 def send_mail(lecture_arr)
 users = User.all
 users.each do |user|
-	lecture_arr.each do |lecture|
-		LectureMailer.lecture_email(user,lecture).deliver
-		puts "성공적으로 메일 보냄: "+lecture
-	end
+  if lecture_arr.kind_of?(Array)
+    lecture = lecture_arr.join(",")
+      LectureMailer.lecture_email(user,lecture).deliver
+      puts "성공적으로 메일 보냄: "+lecture
+  else
+    lecture = lecture_arr
+      LectureMailer.lecture_email(user,lecture).deliver
+      puts "성공적으로 메일 보냄: "+lecture
+  end
+
 end
 end
