@@ -17,19 +17,12 @@
             <form action='/plz/create' method='post' class="form-signin">
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
                 <span id="reauth-email" class="reauth-email"></span>
-                <input type="text" name="name" id="inputName" class="form-control" value="<%=@user.name%>" required autofocus>
-                <input type="email" name="email" id="inputEmail" class="form-control" value="<%=@user.email%>" required>
-                <div id="remember" class="checkbox">
-                    <label>
-                        <input type="checkbox" value="remember-me"> Remember me
-                    </label>
-                </div>
-                <button class="btn btn-lg btn-primary btn-block btn-signin" name="sign" value="true" type="submit">Sign in</button>
-
-                <button class="btn btn-lg btn-primary btn-block btn-signin"  name="sign" value="false" type="submit">Log in</button>
-            </form><!-- /form -->
-            <a href="#" class="forgot-password">
-                Forgot the password?
+                <b>Name </b><p><%=@user.name%></p>
+                <b>Password </b><p><%=@user.email%></p>
+                
+                <!-- /form -->
+            <a href="/" class="forgot-password">
+                Go Back
             </a>
         </div><!-- /card-container -->
     </div><!-- /container -->
