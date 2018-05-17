@@ -35,6 +35,7 @@ class PlzController < ApplicationController
    
     def login
       @user = User.find_by(email: params[:email]+"."+params[:format])
+	  @lectures = Test1.all
     end
    
 

@@ -23,7 +23,20 @@
                 <!-- /form -->
             <a href="/" class="forgot-password">
                 Go Back
-            </a>
+            </a><br><br><br>
+			<table style="width:100%">
+			  <tr>
+				<th>LectureName</th>
+				<th>Update</th>
+			  </tr>
+			  <%@lectures.each do |x|%>
+			  <tr>
+				<td><a href="https://uni.likelion.org/lectures/<%=x.id%>"><%=x.name%></a></td> 
+				<td><%=x.created_at.strftime("%y.%m.%d, %a")%></td>
+			  </tr>
+			  <%end%>
+			  
+			</table>
         </div><!-- /card-container -->
     </div><!-- /container -->
 </body>
