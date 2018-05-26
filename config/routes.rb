@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   
   post "plz/create" => "plz#create"
   
-  get 'plz/login/:email' => "plz#login"
+  get "plz/login/:email" => "plz#login"
 end

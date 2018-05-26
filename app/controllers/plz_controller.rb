@@ -15,7 +15,7 @@ class PlzController < ApplicationController
 			@user.name = params[:name]
 			@user.email = params[:email]
 			@user.save
-			redirect_to :root, notice: "성공적으로 가입되었습니다."
+			redirect_to :root, notice: "#{@user.name}님, 성공적으로 가입되었습니다."
 		end
 		
 	else
